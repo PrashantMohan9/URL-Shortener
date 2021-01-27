@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img style="margin-left: 15px; margin-bottom: 8px;" src="assets/Images/Logo.png">
+        <span style="font-weight: bolder; font-size: xx-large; margin-left: 5px; color: black;">Short<span style="color: #46e26d;">ly</span> </span> 
+    </a>
+  </nav>
+  <div class="container">
+
+    <div class="row">
+        <div class="col">
+            <img class="homepage-image" src="assets/Images/Homepage.svg">
+        </div>
+        <dir class="col"> 
+            <div class="right-side">
+                <h1 class="landing-text">Login to track all your URL's <span style="color: #46e26d;">at one place</span></h1>
+                <div class="login-form">
+                <form (submit)="onLogin(loginForm)" #loginForm="ngForm"> 
+                    <input type="email" name="email" ngModel class="login-input" id="email" placeholder="Email Address" #emailInput="ngModel" required email>  
+                    <br>
+                    <input type="password" name="password" ngModel class="login-input" id="password" placeholder="Password" #passwordInput="ngModel" required>
+                    <br>
+                    <button type="submit" class="login-button"> Login</button>
+                </form>
+                <hr>
+                <button type="button" class="signin-button" routerLink="/signup" routerLinkActive="active">Sign Up</button>
+            </div>
+                
+            </div>
+        </dir>
+        
+    </div>
+</div>
+
+
+                                                 
+

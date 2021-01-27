@@ -1,0 +1,44 @@
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img style="margin-left: 15px; margin-bottom: 8px;" src="assets/Images/Logo.png">
+        <span style="font-weight: bolder; font-size: xx-large; margin-left: 5px; color: black;">Short<span style="color: #46e26d;">ly</span> </span> 
+    </a>
+
+    <div class="form-inline ml-auto" style="margin-right: 10px;">
+        <button type="button" style="background-color: #0879fa; font-weight: 700; margin-right: 10px; border: 0px;" class="btn btn-primary" routerLink="/signup" routerLinkActive="active">SignUp</button>
+        <button type="button" style="background-color: #1fc048; font-weight: 700; margin-right: 10px; border: 0px;" class="btn btn-primary" routerLink="/landing" routerLinkActive="active">Login</button>
+    </div>
+</nav>
+<header>
+    <img style="height: 200px;" width="200px" src="assets/Images/Homepage-link.png">
+    <br>
+    <h1>Create Fast Short</h1>
+    <h1 class="tw">URL's for </h1>
+    <button class="create-button" href="" (click)="scrollDown()">Shorten URL</button>
+
+</header>
+
+<div class="container">
+    <form class="my-4 form-inline" (submit)="onSubmit(urlForm)" #urlForm="ngForm">
+        <label class="sr-only">Url</label>
+        <input required placeholder="Url" type="url" ngModel name="fullUrl" class="form-control col mr-2" #urlInput="ngModel" required>
+        <button [disabled]="submitted" class="btn btn-success but" type="submit">Shrink</button>
+      </form>
+      <br>
+
+    <div *ngIf="showResult" class="result">
+        <table style="width: 100%;">
+        <tbody>
+            <tr *ngFor="let url of AllURL">
+            <td style="width: 60%;">{{url.full}}</td>
+            <td style="width: 20%;"><a href="{{baseURL}}{{url.short}}">{{url.short}}</a></td>
+            <td style="width: 20%;"><button class="btn btn-success but" (click)="copyURL(url.short)">Copy</button></td>
+            </tr>
+        </tbody>
+        </table>
+        <p class="note"> <small>To save and track all your URL's. Please Login</small></p>
+    </div>
+    <br>
+    <br>
+</div>
